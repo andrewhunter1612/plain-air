@@ -37,6 +37,30 @@ public class Flight {
         return mass / capacity / 2;
     }
 
+    public double calculatePassengerBagTotalMass() {
+        double totalBagMass = 0.0;
+        for (Passenger passenger : this.passengers){
+            totalBagMass += passenger.getBagMass();
+        }
+        return totalBagMass;
+    }
+
+    public double calculatePassengerTotalMass(){
+        double totalMass = 0.0;
+        for (Passenger passenger : this.passengers){
+            totalMass += passenger.getMass();
+        }
+        return totalMass;
+    }
+
+    public double calculateMassLeftForBaggage(){
+        return this.plane.getMass() - calculatePassengerTotalMass() - calculatePassengerBagTotalMass();
+    }
+
+    public void addPassenger(Passenger passenger){
+        this.passengers.add(passenger);
+    }
+
     public Plane getPlane() {
         return plane;
     }

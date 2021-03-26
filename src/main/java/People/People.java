@@ -14,7 +14,7 @@ public abstract class People {
         return name;
     }
 
-    public int getmass() {
+    public int getMass() {
         return mass;
     }
 }
