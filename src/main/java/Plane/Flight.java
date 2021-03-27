@@ -7,6 +7,7 @@ import People.Pilot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Flight {
 
@@ -29,6 +30,14 @@ public class Flight {
         this.departure = routes.getStartCity();
         this.flightTime = routes.getTimeMins();
         this.departureTime = departureTime;
+    }
+
+    public HashMap<String, String> getAllPassengerSeats(){
+        HashMap<String, String> passengerSeats = new HashMap<>();
+        for (Passenger passenger : this.passengers){
+            passengerSeats.put(passenger.getName(), passenger.getSeat());
+        }
+        return passengerSeats;
     }
 
     public double baggageMassPerPassenger() {

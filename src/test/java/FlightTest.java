@@ -23,9 +23,9 @@ public class FlightTest {
     @Before
     public void before(){
         passenger = new Passenger("James", 50, 20);
-        passenger1 = new Passenger("James", 60, 21);
-        passenger2 = new Passenger("James", 45, 15);
-        passenger3 = new Passenger("James", 57, 18);
+        passenger1 = new Passenger("Fred", 60, 21);
+        passenger2 = new Passenger("Lucy", 45, 15);
+        passenger3 = new Passenger("Tony", 57, 18);
         plane = new Plane(PlaneType.BOEING747);
         pilot = new Pilot("Andrew", 100, CabinRank.CAPTAIN, "123string");
         flight = new Flight(plane, pilot, "Glasgow 123", Routes.GLA_EDI, "14:00");
@@ -70,5 +70,18 @@ public class FlightTest {
     @Test
     public void calculateRemainingMass(){
         assertEquals(9714, flight.calculateMassLeftForBaggage(), 0.0);
+    }
+
+    @Test
+    public void getFlightSeatList(){
+//        assertEquals(280, plane.setSeats().size());
+
+        plane.bookSeat(passenger);
+        plane.bookSeat(passenger1);
+        plane.bookSeat(passenger2);
+
+
+        System.out.println(flight.getAllPassengerSeats());
+
     }
 }
