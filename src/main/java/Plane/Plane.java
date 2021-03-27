@@ -52,9 +52,19 @@ public class Plane {
         return seatList;
     }
 
-    public void bookSeat(Passenger passenger) {
-        String seat = this.seatList.get(new Random().nextInt(this.seatList.size()));
-        passenger.setSeat(seat);
-        this.seatList.remove(seatList.indexOf(seat));
+    public int getRows() {
+        return rows;
+    }
+
+    public int getSeatsPerRow() {
+        return seatsPerRow;
+    }
+
+    public HashMap<Integer, String> getLetters() {
+        return letters;
+    }
+
+    public ArrayList<String> getSeatList() {
+        return seatList;
     }
 }

@@ -8,6 +8,7 @@ import People.Pilot;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Flight {
 
@@ -38,6 +39,12 @@ public class Flight {
             passengerSeats.put(passenger.getName(), passenger.getSeat());
         }
         return passengerSeats;
+    }
+
+    public void bookSeat(Passenger passenger) {
+        String seat = this.plane.getSeatList().get(new Random().nextInt(this.plane.getSeatList().size()));
+        passenger.setSeat(seat);
+        this.plane.getSeatList().remove(plane.getSeatList().indexOf(seat));
     }
 
     public double baggageMassPerPassenger() {

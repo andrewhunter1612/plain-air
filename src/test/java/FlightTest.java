@@ -76,10 +76,10 @@ public class FlightTest {
     public void getFlightSeatList(){
 //        assertEquals(280, plane.setSeats().size());
 
-        plane.bookSeat(passenger);
-        plane.bookSeat(passenger1);
-        plane.bookSeat(passenger2);
-
+        flight.bookSeat(passenger);
+        flight.bookSeat(passenger1);
+        flight.bookSeat(passenger2);
+        flight.bookSeat(passenger3);
 
         System.out.println(flight.getAllPassengerSeats());
 
